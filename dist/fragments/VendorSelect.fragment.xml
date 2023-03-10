@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Venros Found" title="Select Vendor" search=".onSearch" confirm="onVendorSelection" cancel=".onDialogClose"
+		items="{PartnerFunctionModelName>/results}">
+		<StandardListItem title="{PartnerFunctionModelName>Name1}" description="{PartnerFunctionModelName>Lifnr}" iconDensityAware="false" iconInset="false"
+			type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

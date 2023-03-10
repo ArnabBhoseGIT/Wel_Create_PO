@@ -1,0 +1,206 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="HCM_PEOPLE_PROFILE_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Notes" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/><PropertyRef Name="NoteEmployeeNo"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NoteEmployeeNo" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NoteEmplName" Type="Edm.String" MaxLength="40" sap:label="Empl./appl.name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ContentType" Type="Edm.String" MaxLength="30" sap:label="30 Characters" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PhotoUrl" Type="Edm.Binary" sap:label="PHOTO_URL" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="NoteTitle" Type="Edm.String" sap:label="NOTE_TITLE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="NoteText" Type="Edm.String" sap:label="NOTE_TXT" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Timestamp" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SocialMedia" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SocialmediaUrl" Type="Edm.String" MaxLength="4096" sap:label="URI" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ImageUrl" Type="Edm.String" MaxLength="4096" sap:label="URI" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowAsText" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Text" Type="Edm.String" MaxLength="30" sap:label="TEXT" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="EmployeeData" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ename" Type="Edm.String" MaxLength="40" sap:label="Empl./appl.name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ContentType" Type="Edm.String" MaxLength="30" sap:label="ContentType" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PhotoUrl" Type="Edm.Binary" sap:label="URI" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="BldingNo" Type="Edm.String" MaxLength="6" sap:label="Building Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="RoomNo" Type="Edm.String" MaxLength="6" sap:label="Room Number" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Phone" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Email" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OrgunitTxt" Type="Edm.String" MaxLength="40" sap:label="Org.Unit Short Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PositionTxt" Type="Edm.String" MaxLength="40" sap:label="Position Short Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="City" Type="Edm.String" MaxLength="40" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Country" Type="Edm.String" MaxLength="50" sap:label="Country" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Localtime" Type="Edm.DateTime" Precision="7" sap:label="Local Time" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="QualificationSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Qualification"
+					FromRole="FromRole_Employee_Qualification" ToRole="ToRole_Employee_Qualification"/><NavigationProperty Name="TimeRecording" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_TimeRecording"
+					FromRole="FromRole_Employee_TimeRecording" ToRole="ToRole_Employee_TimeRecording"/><NavigationProperty Name="PaystubSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Paystub" FromRole="FromRole_Employee_Paystub"
+					ToRole="ToRole_Employee_Paystub"/><NavigationProperty Name="CourseSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Course" FromRole="FromRole_Employee_Course"
+					ToRole="ToRole_Employee_Course"/><NavigationProperty Name="ProgressionSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Progression"
+					FromRole="FromRole_Employee_Progression" ToRole="ToRole_Employee_Progression"/><NavigationProperty Name="VacationSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Vacation" FromRole="FromRole_Employee_Vacation"
+					ToRole="ToRole_Employee_Vacation"/><NavigationProperty Name="SocialMediaSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_SocialMedia"
+					FromRole="FromRole_Employee_SocialMedia" ToRole="ToRole_Employee_SocialMedia"/><NavigationProperty Name="Configuration" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Configuration"
+					FromRole="FromRole_Employee_Configuration" ToRole="ToRole_Employee_Configuration"/><NavigationProperty Name="PersonalInfoSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_PersonalInfo"
+					FromRole="FromRole_Employee_PersonalInfo" ToRole="ToRole_Employee_PersonalInfo"/><NavigationProperty Name="NotesSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Notes" FromRole="FromRole_Employee_Notes"
+					ToRole="ToRole_Employee_Notes"/><NavigationProperty Name="CompensationSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Compensation"
+					FromRole="FromRole_Employee_Compensation" ToRole="ToRole_Employee_Compensation"/><NavigationProperty Name="PerformanceSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_Performance"
+					FromRole="FromRole_Employee_Performance" ToRole="ToRole_Employee_Performance"/><NavigationProperty Name="TimeBalanceSet" Relationship="HCM_PEOPLE_PROFILE_SRV.Employee_TimeBalance"
+					FromRole="FromRole_Employee_TimeBalance" ToRole="ToRole_Employee_TimeBalance"/></EntityType>
+			<EntityType Name="Compensation" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><Property Name="Salary" Type="Edm.String" MaxLength="15" sap:label="Salary" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Bonus" Type="Edm.String" MaxLength="15" sap:label="Bonus" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Year" Type="Edm.String" MaxLength="4" sap:label="Cumulation year" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="TimeBalance" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BalanceText" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Text for Balance Field" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BalanceValue" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Value for Info Field" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AsofDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Qualification" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="QualifId" Type="Edm.String" MaxLength="8" sap:label="Object ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Name" Type="Edm.String" MaxLength="40" sap:label="Object abbr." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ValidUntil" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Rating" Type="Edm.String" MaxLength="4" sap:label="Proficiency" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="RatingText" Type="Edm.String" MaxLength="40" sap:label="Proficiency" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="RequiredRating" Type="Edm.String" MaxLength="4" sap:label="Proficiency" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Scalecount" Type="Edm.Byte" sap:label="SCALECOUNT" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="Paystub" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Amount" Type="Edm.Decimal" Precision="15" Scale="2" sap:label="AMOUNT" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="CURRENCY" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Paydate" Type="Edm.DateTime" Precision="7" sap:label="PAYDATE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Configuration" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ShowPerformance" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowTimerecording" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowVacation" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowCompensation" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowCourse" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowQualification" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowNotifications" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowNotes" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ShowSocialMediaInfo" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowProgression" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowPersonalinfo" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ShowTimeBalance" Type="Edm.String" MaxLength="1" sap:label="TRUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CompensationNoOfYears" Type="Edm.String" MaxLength="2" sap:label="num2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PerformanceNoOfYears" Type="Edm.String" MaxLength="2" sap:label="num2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CourseNoOfMonths" Type="Edm.String" MaxLength="2" sap:label="num2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PaystubNoOfMonths" Type="Edm.String" MaxLength="2" sap:label="num2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="QualificationNoOfMonths" Type="Edm.String" MaxLength="2" sap:label="num2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="VacationNoOfMonths" Type="Edm.String" MaxLength="2" sap:label="num2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Vacation" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Type" Type="Edm.String" MaxLength="40" sap:label="Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Days" Type="Edm.Decimal" Precision="6" Scale="2" sap:label="Payr.days" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Info" Type="Edm.String" MaxLength="64" sap:label="Info" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Status" Type="Edm.String" MaxLength="60" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="BeginDate" Type="Edm.DateTime" Precision="7" sap:label="Begin Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EndDate" Type="Edm.DateTime" Precision="7" sap:label="End Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="AttabsHours" Type="Edm.Decimal" Precision="7" Scale="2" sap:label="Absence hrs" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ConcurrentEmployment" sap:content-version="1">
+				<Key><PropertyRef Name="Pernr"/></Key><Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="AssignmentText" Type="Edm.String" MaxLength="255" sap:label="Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="Course" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Id" Type="Edm.String" MaxLength="8" sap:label="ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Name" Type="Edm.String" MaxLength="40" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BeginDate" Type="Edm.DateTime" Precision="7" sap:label="Begin Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EndDate" Type="Edm.DateTime" Precision="7" sap:label="End Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Progression" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BeginDate" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EndDate" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="OrgunitTxt" Type="Edm.String" MaxLength="40" sap:label="Org.Unit Short Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PositionTxt" Type="Edm.String" MaxLength="40" sap:label="Position Short Text" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PersonalInfo" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Groupname" Type="Edm.String" MaxLength="80" sap:label="Char80" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Fieldlabel" Type="Edm.String" MaxLength="80" sap:label="Char80" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Fieldvalue" Type="Edm.String" MaxLength="80" sap:label="Char80" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="TimeRecording" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Startdate" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Missingdays" Type="Edm.Int32" sap:label="Number" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Info" Type="Edm.String" MaxLength="80" sap:label="INFO" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="Performance" sap:content-version="1">
+				<Key><PropertyRef Name="Employeenumber"/></Key><Property Name="Employeenumber" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Personnel No." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BeginDate" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="EndDate" Type="Edm.DateTime" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="AppraisalText" Type="Edm.String" MaxLength="20" sap:label="APPRISAL_TXT" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="AppraisalRating" Type="Edm.String" MaxLength="60" sap:label="APPRISAL_RATING" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ScaleCount" Type="Edm.Byte" sap:label="SCALECOUNT" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<Association Name="Employee_Vacation" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Vacation"/><End Type="HCM_PEOPLE_PROFILE_SRV.Vacation" Multiplicity="*" Role="ToRole_Employee_Vacation"/></Association>
+			<Association Name="Employee_SocialMedia" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_SocialMedia"/><End Type="HCM_PEOPLE_PROFILE_SRV.SocialMedia" Multiplicity="*" Role="ToRole_Employee_SocialMedia"/></Association>
+			<Association Name="Employee_PersonalInfo" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_PersonalInfo"/><End Type="HCM_PEOPLE_PROFILE_SRV.PersonalInfo" Multiplicity="*" Role="ToRole_Employee_PersonalInfo"/></Association>
+			<Association Name="Employee_Notes" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Notes"/><End Type="HCM_PEOPLE_PROFILE_SRV.Notes" Multiplicity="*" Role="ToRole_Employee_Notes"/></Association>
+			<Association Name="Employee_Compensation" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Compensation"/><End Type="HCM_PEOPLE_PROFILE_SRV.Compensation" Multiplicity="*" Role="ToRole_Employee_Compensation"/></Association>
+			<Association Name="Employee_Performance" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Performance"/><End Type="HCM_PEOPLE_PROFILE_SRV.Performance" Multiplicity="*" Role="ToRole_Employee_Performance"/></Association>
+			<Association Name="Employee_Configuration" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Configuration"/><End Type="HCM_PEOPLE_PROFILE_SRV.Configuration" Multiplicity="*" Role="ToRole_Employee_Configuration"/></Association>
+			<Association Name="Employee_Progression" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Progression"/><End Type="HCM_PEOPLE_PROFILE_SRV.Progression" Multiplicity="*" Role="ToRole_Employee_Progression"/></Association>
+			<Association Name="Employee_Course" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Course"/><End Type="HCM_PEOPLE_PROFILE_SRV.Course" Multiplicity="*" Role="ToRole_Employee_Course"/></Association>
+			<Association Name="Employee_TimeBalance" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_TimeBalance"/><End Type="HCM_PEOPLE_PROFILE_SRV.TimeBalance" Multiplicity="0..1" Role="ToRole_Employee_TimeBalance"/></Association>
+			<Association Name="Employee_Paystub" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Paystub"/><End Type="HCM_PEOPLE_PROFILE_SRV.Paystub" Multiplicity="*" Role="ToRole_Employee_Paystub"/></Association>
+			<Association Name="Employee_TimeRecording" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_TimeRecording"/><End Type="HCM_PEOPLE_PROFILE_SRV.TimeRecording" Multiplicity="0..1" Role="ToRole_Employee_TimeRecording"/></Association>
+			<Association Name="Employee_Qualification" sap:content-version="1"><End Type="HCM_PEOPLE_PROFILE_SRV.EmployeeData" Multiplicity="0..1" Role="FromRole_Employee_Qualification"/><End Type="HCM_PEOPLE_PROFILE_SRV.Qualification" Multiplicity="*" Role="ToRole_Employee_Qualification"/></Association>
+			<EntityContainer Name="HCM_PEOPLE_PROFILE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="SocialMediaSet" EntityType="HCM_PEOPLE_PROFILE_SRV.SocialMedia" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="EmployeeDataSet" EntityType="HCM_PEOPLE_PROFILE_SRV.EmployeeData" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="CompensationSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Compensation" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="TimeBalanceSet" EntityType="HCM_PEOPLE_PROFILE_SRV.TimeBalance" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="QualificationSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Qualification" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PaystubSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Paystub" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ConfigurationSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Configuration" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="VacationSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Vacation" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ConcurrentEmploymentSet" EntityType="HCM_PEOPLE_PROFILE_SRV.ConcurrentEmployment" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CourseSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Course" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="ProgressionSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Progression" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PersonalInfoSet" EntityType="HCM_PEOPLE_PROFILE_SRV.PersonalInfo" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="TimeRecordingSet" EntityType="HCM_PEOPLE_PROFILE_SRV.TimeRecording" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PerformanceSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Performance" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="NotesSet" EntityType="HCM_PEOPLE_PROFILE_SRV.Notes" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="Employee_VacationSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Vacation" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Vacation"/><End EntitySet="VacationSet" Role="ToRole_Employee_Vacation"/></AssociationSet>
+				<AssociationSet Name="Employee_ProgressionSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Progression" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Progression"/><End EntitySet="ProgressionSet" Role="ToRole_Employee_Progression"/></AssociationSet>
+				<AssociationSet Name="Employee_TimeRecordingSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_TimeRecording" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_TimeRecording"/><End EntitySet="TimeRecordingSet" Role="ToRole_Employee_TimeRecording"/></AssociationSet>
+				<AssociationSet Name="Employee_PersonalInfo_AssocSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_PersonalInfo" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_PersonalInfo"/><End EntitySet="PersonalInfoSet" Role="ToRole_Employee_PersonalInfo"/></AssociationSet>
+				<AssociationSet Name="Employee_PaystubSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Paystub" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Paystub"/><End EntitySet="PaystubSet" Role="ToRole_Employee_Paystub"/></AssociationSet>
+				<AssociationSet Name="Employee_TimeBalanceSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_TimeBalance" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_TimeBalance"/><End EntitySet="TimeBalanceSet" Role="ToRole_Employee_TimeBalance"/></AssociationSet>
+				<AssociationSet Name="Employee_CourseSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Course" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Course"/><End EntitySet="CourseSet" Role="ToRole_Employee_Course"/></AssociationSet>
+				<AssociationSet Name="Employee_CompensationSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Compensation" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Compensation"/><End EntitySet="CompensationSet" Role="ToRole_Employee_Compensation"/></AssociationSet>
+				<AssociationSet Name="Employee_NotesSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Notes" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Notes"/><End EntitySet="NotesSet" Role="ToRole_Employee_Notes"/></AssociationSet>
+				<AssociationSet Name="Employee_SocialMediaSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_SocialMedia" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_SocialMedia"/><End EntitySet="SocialMediaSet" Role="ToRole_Employee_SocialMedia"/></AssociationSet>
+				<AssociationSet Name="Employee_PerformanceSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Performance" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Performance"/><End EntitySet="PerformanceSet" Role="ToRole_Employee_Performance"/></AssociationSet>
+				<AssociationSet Name="Employee_Set" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Configuration" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Configuration"/><End EntitySet="ConfigurationSet" Role="ToRole_Employee_Configuration"/></AssociationSet>
+				<AssociationSet Name="Employee_QualificationSet" Association="HCM_PEOPLE_PROFILE_SRV.Employee_Qualification" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="EmployeeDataSet" Role="FromRole_Employee_Qualification"/><End EntitySet="QualificationSet" Role="ToRole_Employee_Qualification"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/HCM_PEOPLE_PROFILE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/HCM_PEOPLE_PROFILE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

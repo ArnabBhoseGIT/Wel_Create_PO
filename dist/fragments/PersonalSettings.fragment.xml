@@ -1,0 +1,57 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:t="sap.ui.table">
+	<Dialog title="Personal Settings" id="id_addNewRecordDialog" class="sapUiContentPadding">
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<VBox width="100%" visible="true" >
+						<VBox width="100%">
+							<VBox width="100%">
+								<VBox width="100%" alignContent="Inherit">
+									<HBox width="100%" alignItems="Center">
+										<Label text="Purch. Org:" required="true" width="114px" textAlign="End" textDirection="Inherit" design="Bold"/>
+										<ComboBox items="{PurchasingOrgsSetName>/results}" id="idPurchOrg" selectionChange="purchOrgSelChnge" placeholder="Select Purch. Org."
+											class="sapUiTinyMarginBegin" valueStateText="Purch. Org. can't be blank" value="" width="100%">
+											<core:Item key="{PurchasingOrgsSetName>Ekorg}" text="{PurchasingOrgsSetName>Ekotx}" />
+										</ComboBox>
+									</HBox>
+									<HBox width="100%" alignItems="Center" id="id_TemplateChose" visible="true">
+										<Label text="Purch. Group:" required="true" width="114px" textAlign="End" textDirection="Inherit" design="Bold"/>
+										<ComboBox items="{PurchasingGrpsSetName>/results}" id="idPurchGrp" selectionChange="purchOrgSelChnge" placeholder="Select Purch. Group"
+											class="sapUiTinyMarginBegin" valueStateText="Purc. Group can't be blank" value="" width="100%">
+											<core:Item key="{PurchasingGrpsSetName>Ekgrp}" text="{PurchasingGrpsSetName>Eknam}"/>
+										</ComboBox>
+									</HBox>
+									<HBox width="100%" alignItems="Center" id="id_modell">
+										<Label text="Currency:" required="true" width="114px" textAlign="End" textDirection="Inherit" design="Bold"/>
+										<ComboBox items="{VendorCurrencySetName>/results}" id="idCurrency" selectionChange="purchOrgSelChnge" placeholder="Select Currency"
+											class="sapUiTinyMarginBegin" valueStateText="Currency can't be blank" value="" width="100%">
+											<core:Item key="{VendorCurrencySetName>Wears}" text="{VendorCurrencySetName>Ltext}"/>
+										</ComboBox>
+									</HBox>
+									<HBox width="100%" alignItems="Center" id="id_line">
+										<Label text="Company Code:" required="true" width="114px" textAlign="End" textDirection="Inherit" design="Bold"/>
+										<ComboBox items="{CompanyCodesSetName>/results}" id="idCompCode" selectionChange="purchOrgSelChnge" placeholder="Select Company Code"
+											class="sapUiTinyMarginBegin" valueStateText="Company Code can't be blank" value="" width="100%">
+											<core:Item key="{CompanyCodesSetName>Bukrs}" text="{CompanyCodesSetName>Butxt}"/>
+										</ComboBox>
+									</HBox>
+									<!--<HBox width="100%" alignItems="Center">-->
+									<!--	<Label text="Header Text:" textAlign="Begin" textDirection="Inherit" width="8rem" design="Bold"/>-->
+									<!--	<TextArea id="idTextArea" placeholder="Enter Text" class="sapUiTinyMarginBegin" growing="false" growingMaxLines="7" width="100%"/>-->
+									<!--</HBox>-->
+								</VBox>
+							</VBox>
+						</VBox>
+					</VBox>
+				</l:content>
+			</l:Grid>
+		</content>
+		<beginButton>
+			<Button text="Add" press="onPersonalSettingsDialogAdd"/>
+		</beginButton>
+		<endButton>
+			<Button text="Close" press="onPersonalSettingsDialogClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

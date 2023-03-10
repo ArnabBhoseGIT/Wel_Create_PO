@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.ui.comp.valuehelpdialog"
+	xmlns:core="sap.ui.core">
+	<ValueHelpDialog
+		title="Vendor"
+		ok=".onValueHelpOkPress"
+		cancel=".onValueHelpCancelPress"
+		afterClose=".onValueHelpAfterClose"
+		supportMultiselect="false"
+		key="{Lifnr}"
+		descriptionKey="{Name1}"
+	>
+	</ValueHelpDialog>
+</core:FragmentDefinition>

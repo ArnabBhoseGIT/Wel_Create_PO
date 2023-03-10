@@ -1,0 +1,1 @@
+sap.ui.define([],function(){"use strict";return{numberUnit:function(t){if(!t){return""}return parseFloat(t).toFixed(2)},setOnlyNumber:function(t){},dateFormatter:function(t){if(t){var e=new Date(t);var r=sap.ui.core.format.DateFormat.getDateInstance({pattern:"MM/dd/yyyy"});var n=r.format(e);return n}}}});
